@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not replace null or undefined 1`] = `
+Object {
+  "top": Object {
+    "two": Object {
+      "three": Array [
+        null,
+        undefined,
+      ],
+    },
+  },
+}
+`;
+
+exports[`does not replace null or undefined or missing 1`] = `
+Object {
+  "top": Object {
+    "4": undefined,
+    "two": Object {
+      "three": Array [
+        null,
+        undefined,
+      ],
+    },
+  },
+}
+`;
+
+exports[`goes deep after a single array point 1`] = `
+Object {
+  "top": Object {
+    "a": 0,
+    "two": Object {
+      "three": Array [
+        null,
+        Object {
+          "a": 0,
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`handles a top level array 1`] = `
+Array [
+  "static",
+  Array [
+    0,
+  ],
+]
+`;
+
+exports[`handles an array in an array 1`] = `
+Object {
+  "top": Object {
+    "two": Object {
+      "three": Array [
+        null,
+        Array [
+          "static",
+          "static",
+          0,
+        ],
+      ],
+    },
+  },
+}
+`;
+
+exports[`handles deep-nested paths 1`] = `
+Object {
+  "top": Object {
+    "two": Object {
+      "three": 0,
+    },
+  },
+}
+`;
+
+exports[`handles final-path empty values 1`] = `
+Object {
+  "a": Object {
+    "b": "",
+    "c": Array [
+      null,
+    ],
+  },
+}
+`;
+
+exports[`handles nested arrays 1`] = `
+Object {
+  "top": Object {
+    "two": Object {
+      "three": Array [
+        0,
+        1,
+      ],
+    },
+  },
+}
+`;
+
+exports[`handles single value in nested arrays 1`] = `
+Object {
+  "top": Object {
+    "two": Object {
+      "three": Array [
+        "static",
+        0,
+      ],
+    },
+  },
+}
+`;
+
+exports[`handles top-level paths 1`] = `
+Object {
+  "top": 0,
+}
+`;
+
+exports[`reuses pre-established vars for other snapshots 1`] = `
+Object {
+  "top": Object {
+    "two": Object {
+      "three": Array [
+        "static",
+        0,
+      ],
+    },
+  },
+}
+`;
+
+exports[`reuses pre-established vars for other snapshots 2`] = `
+Object {
+  "foreignKey": 0,
+}
+`;
