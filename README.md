@@ -9,7 +9,7 @@ Jest snapshot testing is great, but it doesn't work if one of your values is ran
 With this package, you can replace random values with deterministic ones.
 
 ## How's it different from using Jest's built-in snapshotSerializers?
-Jests's built in snapshotSerializers config stops short of being useful.
+Jests' built in snapshotSerializers config stops short of being useful (for this case).
 You can't tell it which fields you'd like to replace.
 It doesn't hold state to ensure that the same random value turns into the same static value.
 
