@@ -159,3 +159,17 @@ test('handles final-path empty values', () => {
   dynamicSerializer.toStatic(snapshot, paths);
   expect(snapshot).toMatchSnapshot();
 });
+
+test('handles an array of objects', () => {
+  const paths = ['a.b', 'a.c'];
+  const snapshot = [
+    {
+      a: {
+        b: 'rand',
+      }
+    }
+  ];
+  const dynamicSerializer = new DynamicSerializer();
+  dynamicSerializer.toStatic(snapshot, paths);
+  expect(snapshot).toMatchSnapshot();
+});

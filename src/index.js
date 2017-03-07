@@ -16,10 +16,17 @@ export default class DynamicSerializer {
   _visitArray(snapshot, path) {
     const nextProp = path[0];
     const arrVal = snapshot[nextProp];
-    if (path.length > 1) {
-      this._visitSnapshot(arrVal, path.slice(1));
-    } else if (!isEmpty(arrVal)) {
-      snapshot[nextProp] = this._cacheVal(arrVal);
+    if (isFinite(nextProp)) {
+      if (path.length > 1) {
+        this._visitSnapshot(arrVal, path.slice(1));
+      } else if (!isEmpty(arrVal)) {
+        snapshot[nextProp] = this._cacheVal(arrVal);
+      }
+    } else {
+      for (let i = 0; i < snapshot.length; i++) {
+        const arrVal = snapshot[i];
+        this._visitSnapshot(arrVal, path);
+      }
     }
   }
 

@@ -69,6 +69,16 @@ Object {
 }
 `;
 
+exports[`handles an array of objects 1`] = `
+Array [
+  Object {
+    "a": Object {
+      "b": 0,
+    },
+  },
+]
+`;
+
 exports[`handles deep-nested paths 1`] = `
 Object {
   "top": Object {
