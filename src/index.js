@@ -53,7 +53,7 @@ export default class DynamicSerializer {
   _visitSnapshot(snapshot, path) {
     if (Array.isArray(snapshot)) {
       this._visitArray(snapshot, path);
-    } else {
+    } else if (snapshot) {
       this._visitObject(snapshot, path);
     }
   }
