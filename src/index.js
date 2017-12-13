@@ -4,13 +4,14 @@ export default class DynamicSerializer {
   constructor() {
     this._counter = 0;
     this._cache = {};
+    this._constant = false;
   }
 
   _cacheVal(arrVal) {
     if (this._cache.hasOwnProperty(arrVal)) {
       return this._cache[arrVal];
     }
-    return this._cache[arrVal] = this._counter++;
+    return this._cache[arrVal] = this._constant ? '<<constant>>' : this._counter++;
   }
 
   _visitArray(snapshot, path) {
@@ -58,12 +59,15 @@ export default class DynamicSerializer {
     }
   }
 
-  toStatic(snapshot, fullPaths) {
+  toStatic(snapshot, fullPaths, options = {}) {
+    const {constant} = options;
+    this._constant = constant;
     for (let i = 0; i < fullPaths.length; i++) {
       const uid = fullPaths[i];
       const path = uid.split('.');
       this._visitSnapshot(snapshot, path);
     }
+    this._constant = false;
     return snapshot;
   }
 }

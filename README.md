@@ -71,7 +71,9 @@ If the final destination of the path is an array, all values will be replaced.
 If you only want to replace one part of an array, it needs to end in a number.
 If the JSON structure is an array, start it off with a number, too.
 For more use cases, see the tests.
-
+- `options`: an object with the following:
+  - `constant`: default to false.  if true, everything will serialize to the same value.
+  Useful if you're trying to sort objects but every key is serialized so there's no good sort key.
 ## FAQ
 
 Q: Why do you mutate my JSON tree? I heard good functional programming never mutates...
