@@ -8,10 +8,11 @@ export default class DynamicSerializer {
   }
 
   _cacheVal(arrVal) {
+    if (this._constant) return '<<constant>>';
     if (this._cache.hasOwnProperty(arrVal)) {
       return this._cache[arrVal];
     }
-    return this._cache[arrVal] = this._constant ? '<<constant>>' : this._counter++;
+    return this._cache[arrVal] = this._counter++;
   }
 
   _visitArray(snapshot, path) {
