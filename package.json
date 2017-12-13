@@ -1,6 +1,6 @@
 {
   "name": "dynamic-serializer",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "crawls a JSON tree replacing dynamic values with a deterministic integer",
   "main": "./lib/index.js",
   "scripts": {
